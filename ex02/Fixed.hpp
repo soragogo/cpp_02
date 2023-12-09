@@ -6,6 +6,23 @@ class Fixed{
     public:
         Fixed &operator=(const Fixed& fixed);
         bool operator>(const Fixed& fixed);
+        bool operator<(const Fixed& fixed);
+        bool operator>=(const Fixed& fixed);
+        bool operator<=(const Fixed& fixed);
+        bool operator==(const Fixed& fixed);
+        bool operator!=(const Fixed& fixed);
+        Fixed operator+(const Fixed& fixed);
+        Fixed operator-(const Fixed& fixed);
+        Fixed operator*(const Fixed& fixed);
+        Fixed operator/(const Fixed& fixed);
+        Fixed &operator++(void);
+        Fixed operator++(int);
+        Fixed &operator--(void);
+        Fixed operator--(int);
+        static Fixed& min(Fixed& a, Fixed& b);
+        static const Fixed& min(const Fixed& a, const Fixed& b);
+        static Fixed& max(Fixed& a, Fixed& b);
+        static const Fixed& max(const Fixed& a, const Fixed& b);
         Fixed();
         Fixed(const int value);
         Fixed(const float value);
@@ -22,4 +39,3 @@ class Fixed{
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
-int ft_pow(int num, int power);

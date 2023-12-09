@@ -1,11 +1,5 @@
 #include "Fixed.hpp"
-int ft_pow(int num, int power)
-{
-    if (power <= 1)
-        return num;
-    else
-        return num * ft_pow(num, power-1);
-}
+
 
 Fixed::Fixed()
 {
@@ -22,13 +16,13 @@ Fixed::Fixed(const Fixed &fixed)
 Fixed::Fixed(const int value)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->value = value * ft_pow(2, 8);
+    this->value = value * (1 << fBits);
 }
 
 Fixed::Fixed(const float value)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->value = value * ft_pow(2, 8);
+    this->value = std::roundf(value * (1 << fBits));
 }
 
 Fixed &Fixed::operator=(const Fixed& fixed)
@@ -51,7 +45,7 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-    value = raw * ft_pow(2, 8);
+    value = raw * (1 << fBits);
 }
 
 
@@ -59,7 +53,7 @@ float Fixed::toFloat(void) const
 {
     float ret;
     ret = this->getRawBits();
-    return (ret / ft_pow(2, 8));
+    return (ret / (1 << fBits));
 }
 
 int Fixed::toInt(void) const

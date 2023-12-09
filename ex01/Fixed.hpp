@@ -21,4 +21,3 @@ class Fixed{
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
-int ft_pow(int num, int power);
