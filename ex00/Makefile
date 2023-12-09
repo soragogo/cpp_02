@@ -14,7 +14,6 @@ all:$(NAME)
 $(NAME):$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS)
 
-
 clean:
 	rm -rf $(OBJS)
 
