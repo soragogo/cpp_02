@@ -5,6 +5,7 @@
 class Fixed{
     public:
         Fixed &operator=(const Fixed& fixed);
+        bool operator>(const Fixed& fixed);
         Fixed();
         Fixed(const int value);
         Fixed(const float value);
