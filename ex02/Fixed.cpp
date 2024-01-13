@@ -58,14 +58,12 @@ float Fixed::toFloat(void) const
 int Fixed::toInt(void) const
 {
     return roundf(toFloat());
-
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {
     os << fixed.toFloat();
     return os;
-
 }
 
 bool Fixed::operator>(const Fixed& fixed)
@@ -76,7 +74,6 @@ bool Fixed::operator>(const Fixed& fixed)
 bool Fixed::operator<(const Fixed& fixed)
 {
     return this->value < fixed.value;
-
 }
 
 bool Fixed::operator>=(const Fixed& fixed)
