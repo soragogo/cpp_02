@@ -11,5 +11,6 @@ int main()
     std::cout << b.getRawBits() << std::endl;
     std::cout << c.getRawBits() << std::endl;
 
+    // system("leaks -q a.out");
     return (0);
 }

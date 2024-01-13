@@ -15,4 +15,3 @@ class Fixed{
 
 };
 
-int ft_pow(int num, int power);

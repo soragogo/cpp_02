@@ -1,17 +1,9 @@
 #include "Fixed.hpp"
 
-int ft_pow(int num, int power)
-{
-    if (power <= 1)
-        return num;
-    else
-        return num * ft_pow(num, power-1);
-}
-
 Fixed::Fixed()
 {
-    value = 0;
     std::cout << "Default constructor called" << std::endl;
+    value = 0;
 }
 
 Fixed::Fixed(const Fixed &fixed)
@@ -43,7 +35,7 @@ int Fixed::getRawBits(void)
 void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
-    value = raw * ft_pow(2, 8);
+    value = raw * (1 << fBits);
 }
 
 
