@@ -30,7 +30,6 @@ int main( void ) {
     std::cout << e << std::endl;
     std::cout << "[min(a, b)]" << std::endl;
     std::cout << Fixed::min( a, b ) << std::endl;
-    system("leaks -q a.out");
     return 0;
 }
 
