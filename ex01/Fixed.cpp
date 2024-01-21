@@ -1,28 +1,24 @@
 #include "Fixed.hpp"
 
 
-Fixed::Fixed()
+Fixed::Fixed() :value(0)
 {
-    value = 0;
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &fixed)
+Fixed::Fixed(const Fixed &fixed) :value(fixed.value)
 {
     std::cout << "Copy constructor called" << std::endl;
-    value = fixed.value;
 }
 
-Fixed::Fixed(const int value)
+Fixed::Fixed(const int value) :value(value * 1 << fBits)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->value = value * (1 << fBits);
 }
 
-Fixed::Fixed(const float value)
+Fixed::Fixed(const float value) :value(std::roundf(value * (1 << fBits)))
 {
     std::cout << "Float constructor called" << std::endl;
-    this->value = std::roundf(value * (1 << fBits));
 }
 
 Fixed &Fixed::operator=(const Fixed& fixed)
