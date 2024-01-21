@@ -7,7 +7,7 @@ class Fixed{
         Fixed(const Fixed &fixed);
         Fixed &operator=(Fixed& fixed);
         ~Fixed();
-        int getRawBits(void);
+        int getRawBits(void) const;
         void setRawBits(int const raw);
     private:
         int value;
