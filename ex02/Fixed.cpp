@@ -44,7 +44,7 @@ int Fixed::getRawBits(void) const
 
 void Fixed::setRawBits(int const raw)
 {
-    value = raw * (1 << fBits);
+    value = raw;
 }
 
 
